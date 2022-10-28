@@ -13,6 +13,7 @@ def wifi_connect(ssid,psk,timeout):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     t = 0
+    wlan.connect(ssid,psk)
     if not wlan.isconnected():
         print('Connecting with network..')
         while (not wlan.isconnected() and t<timeout):
